@@ -4,10 +4,10 @@
     {
         static void Main(string[] args)
         {
-
             EmployeeRoll employeeRoll = new EmployeeRoll();
-            employeeRoll.PartAndFullTime();
+            employeeRoll.SwitchCase();
             employeeRoll.CalculateEmpWge();
+
 
 
         }
