@@ -6,37 +6,41 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageComputationProgram
 {
-    public class EmployeeRoll
-    {
-        const int Is_FULL_TIME = 0, IS_PART_TIME = 1, Wage_PER_HR = 20, FULL_TIME_HR = 8, PART_TIME = 4, WORKING_DAYS = 20;
-        int totalEmpWage = 0, empHrs = 0;
-        public void MonthlyWages()
+   
+        public class EmployeeRoll
         {
-            Random random = new Random();
-            int empCheck = random.Next(0, 2);
-            if (empCheck == Is_FULL_TIME)
-                Console.WriteLine("Employee is Present");
-            else
-                Console.WriteLine("Employee is Absent");
-        }
-        public void CalculateEmpWge()
-        {
-            Random random = new Random();
-            for (int i = 0; i < WORKING_DAYS; i++)
+            const int Is_FULL_TIME = 0, IS_PART_TIME = 1, Wage_PER_HR = 20, FULL_TIME_HR = 8, PART_TIME = 4, WORKING_DAYS = 20;
+            int totalEmpWage = 0, empHrs = 0;
+            public void WorkingHours()
             {
-                int empCheck = random.Next(0, 3);
-                switch (empCheck)
-                {
-                    case Is_FULL_TIME:
-                        empHrs = FULL_TIME_HR;
-                        break;
-                    case IS_PART_TIME:
-                        empHrs = PART_TIME;
-                        break;
-                }
+                Random random = new Random();
+                int empCheck = random.Next(0, 2);
+                if (empCheck == Is_FULL_TIME)
+                    Console.WriteLine("Employee is Present");
+                else
+                    Console.WriteLine("Employee is Absent");
             }
-            totalEmpWage = Wage_PER_HR * empHrs * WORKING_DAYS;
-            Console.WriteLine(totalEmpWage);
+            public void CalculateEmpWge()
+            {
+                Random random = new Random();
+                for (int i = 0; i < WORKING_DAYS && empHrs < 100; i++)
+                {
+                    int empCheck = random.Next(0, 2);
+                    switch (empCheck)
+                    {
+                        case Is_FULL_TIME:
+                            empHrs = FULL_TIME_HR;
+                            break;
+                        case IS_PART_TIME:
+                            empHrs = PART_TIME;
+                            break;
+                    }
+                }
+                totalEmpWage = Wage_PER_HR * empHrs;
+                Console.WriteLine(totalEmpWage);
+            }
         }
     }
-}
+
+
+    
