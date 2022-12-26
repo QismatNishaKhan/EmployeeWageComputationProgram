@@ -38,6 +38,4 @@ namespace EmployeeWageComputationProgram
             return "Total Emp Wage for company: " + this.company + " is: " + this.totalEmpWage;
         }
     }
-
-
 }
